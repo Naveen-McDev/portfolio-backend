@@ -1,5 +1,7 @@
+//mongoose
 const mongoose = require("mongoose");
 
+// intro schema
 const introSchema = new mongoose.Schema({
   welcomeText: {
     type: String,
@@ -23,6 +25,7 @@ const introSchema = new mongoose.Schema({
   },
 });
 
+// about schema
 const aboutSchema = new mongoose.Schema({
   lottieURL: {
     type: String,
@@ -42,6 +45,7 @@ const aboutSchema = new mongoose.Schema({
   },
 });
 
+// experience schema
 const experienceSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -61,6 +65,7 @@ const experienceSchema = new mongoose.Schema({
   },
 });
 
+// project schema
 const projectsSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -84,6 +89,7 @@ const projectsSchema = new mongoose.Schema({
   },
 });
 
+// contact schema
 const contactSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -105,6 +111,7 @@ const contactSchema = new mongoose.Schema({
   },
 });
 
+// export
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
   About: mongoose.model("abouts", aboutSchema),
