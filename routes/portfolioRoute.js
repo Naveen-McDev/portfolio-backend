@@ -6,6 +6,7 @@ const {
   Project,
   Contact,
 } = require("../models/portfolioModel");
+const User = require("../models/userModel");
 
 // get all portfolio data
 router.get("/get-portfolio-data", async (req, res) => {
@@ -160,7 +161,6 @@ router.post("/delete-project", async (req, res) => {
   }
 });
 
-
 // update contact
 router.post("/update-contact", async (req, res) => {
   try {
@@ -183,7 +183,7 @@ router.post("/update-contact", async (req, res) => {
 router.post("/admin-login", async (req, res) => {
   try {
     const user = await User.findOne({
-      username: req.body.username,
+      userName: req.body.userName,
       password: req.body.password,
     });
     user.password = "";
@@ -204,6 +204,5 @@ router.post("/admin-login", async (req, res) => {
     res.status(500).send(error);
   }
 });
-
 
 module.exports = router;
